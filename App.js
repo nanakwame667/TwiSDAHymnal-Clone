@@ -3,15 +3,17 @@ import {NavigationContainer} from '@react-navigation/native';
 import React, { Component } from 'react';
 
 import 'react-native-gesture-handler';
-
-import StackNavigator from './src/navigation/stackNavigator';
-
+import {Provider} from 'react-redux';
+import DrawerNavigator from './src/navigation/drawerNavigator';
+import store from './store/index';
 export default class App extends Component{
   render(){
     return(
+      <Provider store={store}>
       <NavigationContainer>
-      <StackNavigator/>
+      <DrawerNavigator/>
       </NavigationContainer>
+      </Provider>
     )
   }
 }
